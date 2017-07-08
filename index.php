@@ -13,7 +13,7 @@
 	<body>
 		<?php
     //establishes connection with the database and also selects the default database
-    $mysqli = new mysqli("localhost", "shawank", "zrrJ8zNEdpuTwuty", "ODS_DB");
+    $mysqli = new mysqli("localhost", "ENTER_USERNAME_HERE", "ENTER_PASSWORD_HERE", "ODS_DB");
  
 // Check connection
 if($mysqli === false){
