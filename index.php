@@ -13,7 +13,7 @@
 	<body>
 		<?php
     //establishes connection with the database and also selects the default database
-    $mysqli = new mysqli("localhost", "ENTER_USERNAME_HERE", "ENTER_PASSWORD_HERE", "ODS_DB");
+    $mysqli = new mysqli("localhost", "shawank", "zrrJ8zNEdpuTwuty", "ODS_DB");
  
 // Check connection
 if($mysqli === false){
@@ -251,7 +251,8 @@ if($mysqli === false){
                             	
         <div class="product">
 		<div class="product-image">
-			<img src="sample.jpg" />
+			<img src="<?php echo $result["IMAGE_SRC"]."/image1.png"; ?>" />
+			<p><?php echo $result["IMAGE_SRC"]."/image1.png"; ?></p>
 		</div>
 		
 		<div class="product-details">
@@ -318,26 +319,27 @@ if($mysqli === false){
 			</div>
 			<div class = "BIS_STANDARDS_APPROVED_LINK">
 				<h3 >BIS STANDARDS APPROVED LINK</h3>
-				<p>
-					<?php echo $result["BIS_STANDARDS_APPROVED_LINK"]; ?>
-				</p>
+				<a href = "<?php echo $result["BIS_STANDARDS_APPROVED_LINK"]; ?>"/>
 			</div>
 			<div class = "LEAST_PRICE_AVAILABLE1">
 				<h3 >LEAST PRICE AVAILABLE 1</h3>
 				<p>
 					<?php echo $result["LEAST_PRICE_AVAILABLE1"]; ?>
+					<img src="<?php echo $result["IMAGE_SRC"]."/leastprice/image1.png"; ?>" />
 				</p>
 			</div>
 			<div class = "LEAST_PRICE_AVAILABLE2">
 				<h3 >LEAST PRICE AVAILABLE 2</h3>
 				<p>
 					<?php echo $result["LEAST_PRICE_AVAILABLE2"]; ?>
+					<img src="<?php echo $result["IMAGE_SRC"]."/leastprice/image2.png"; ?>" />
 				</p>
 			</div>
 			<div class = "LEAST_PRICE_AVAILABLE3">
 				<h3 >LEAST PRICE AVAILABLE 3</h3>
 				<p>
 					<?php echo $result["LEAST_PRICE_AVAILABLE3"]; ?>
+					<img src="<?php echo $result["IMAGE_SRC"]."/leastprice/image3.png" ; ?>"/>
 				</p>
 			</div>
 	<?php
