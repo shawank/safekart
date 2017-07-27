@@ -164,3 +164,7 @@ text-align: center;
 color: #faf8f9;
 font-size: 1.5em;
 }
+.btn:active, .btn:focus {
+    outline: none !important;
+}
+
