@@ -12,7 +12,7 @@
 
 	</head>
 	<body>
-		<?php
+      <?php
     //establishes connection with the database and also selects the default database
     $mysqli = new mysqli("localhost", "shawank", "zrrJ8zNEdpuTwuty", "ODS_DB");
  
@@ -29,161 +29,160 @@ if($mysqli === false){
     
     if($result = $mysqli->query($sqlquery))
     { ?>
-		<div class="fixed">
-			<!--<ul class="firstlist">
-				<li>Back to IRSC</li>
-			</ul>-->
+        <div class="fixed">
+            <ul class="firstlist">
+                <li>Back to IRSC</li>
+            </ul>
 
-			<h1 class="SafeKart" style="margin-left: 10%; display: inline-block;">SafeKart</h1>
-			<p style="float: right; margin-right: 10%; display: inline-block; color: #fff; font-size: 14px; margin-top: 40px;">Go to <a href="http://road-safety.co.in" style="color: #fff;">IRSC</a> Home</p>
-			<nav class="navbar navbar-default" style="width: 80%; margin: auto; border-radius: 5px;border-color: #bb4430">
-			<div class="container-fluid" style="border-radius: 5px; ">
-				<div class="topbar">
-				<ul class="nav navbar-nav center">
-					<li class="active"><a href="#">Home</a></li>
-					<li><a href="#">About Us</a></li>
-					<li class="dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown">Category</a>
-						<ul class="dropdown-menu multi-level">
-    					  <li class="dropdown-submenu">
-    					  	<a class="dropdown-toggle" href="#" data-toggle="dropdown">Road-related Products</a>
-    					  	<ul class="dropdown-menu single">
-    					  		<?php
+            <h1 class="SafeKart" style="margin-left: 10%; display: inline-block;">SafeKart</h1>
+            <p style="float: right; margin-right: 10%; display: inline-block; color: blue; font-size: 14px; margin-top: 40px;">Go to <a href="http://road-safety.co.in" style="color: blue;">IRSC</a> Home</p>
+            <nav class="navbar navbar-default" style="width: 80%; margin: auto; border-radius: 5px;border-color: white">
+            <div class="container-fluid" style="border-radius: 5px; ">
+                <div class="topbar">
+                <ul class="nav navbar-nav center">
+                    <li style = "font-size: 1.3vw;" class="active"><a href="/">Home</a></li>
+                    <li style = "font-size: 1.3vw;"><a href="#">About Us</a></li>
+                    <li style = "font-size: 1.3vw;" class="dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown">Category</a>
+                        <ul class="dropdown-menu multi-level">
+                          <li class="dropdown-submenu">
+                            <a class="dropdown-toggle" href="#" data-toggle="dropdown">Road-related Products</a>
+                            <ul class="dropdown-menu single">
+                             <?php
                             while($row = $result->fetch_array())
                             {
                             $url = "index.php?ITEM_NAME=".$row["ITEM_NAME"];
                             
                             ?>
 
-    	                    
-    	                    <li><a href="<?php echo $url; ?>"><?php echo $row["ITEM_NAME"]; ?></a></li>
-    	                    <?php
+                            
+                            <li><a href="<?php echo $url; ?>"><?php echo $row["ITEM_NAME"]; ?></a></li>
+                            <?php
                             }
                             }
                             
                            ?>
                            
-	          	
-    					  		<!--<li ><a href="product_temp.html">Traffic Cone connecting rod</a></li>
-								<li><a href="#">Chain</a></li>
-								<li><a href="#">Solar Studs</a></li>
-								<li><a href="#">Epoxy Filled Road Stud</a></li>
-								<li><a href="#">Barricades</a></li>
-								<li><a href="#">Solar Delineator</a></li>
-								<li><a href="#">Lane control signals lights</a></li>
-								<li><a href="#">Parking Dividers</a></li>
-								<li><a href="#">Traffic Sensors</a></li>
-								<li><a href="#">Road Blocker</a></li>
-								<li><a href="#">Car Stopper</a></li>	
-								<li><a href="#">Road Signs</a></li>
-								<li><a href="#">Traffic Warning Flasher</a></li>
-								<li><a href="#">Traffic Mirror</a></li>
-								<li><a href="#">Antiskid Coating</a></li>
-								<li><a href="#">LED Solar</a></li>
-								<li><a href="#">Solar Street Light</a></li>
-								<li><a href="#">Solar cat eye</a></li>
-								<li><a href="#">Speed retarders</a></li>
-								<li><a href="#">Traffic Cone</a></li>
-								<li><a href="#">Crash barrier</a></li>	
-								<li><a href="#">Traffic median marker</a></li>
-								<li><a href="#">Retractable traffic cone topper</a></li>
-								<li><a href="#">Reflective traffic cone</a></li>	
-								<li><a href="#">Truck wheel stopper</a></li>
-								<li><a href="#">Rumbler</a></li>
-								<li><a href="#">Thermo Plastic Road Marking Paint</a></li>
-								<li><a href="#">Boom Barriers</a></li>
-								<li><a href="#">Traffic Delineator Posts</a></li>
-								<li><a href="#">Traffic Batons</a></li>
-								<li><a href="#">Road Lamps</a></li>
-								<li><a href="#">Rubber Corner Guard</a></li>
-								<li><a href="#">Traffic Cone Highly Flexible</a></li>
-								<li><a href="#">crash Barrier</a></li>
-								<li><a href="#">Barricading Tape</a></li>
-								<li><a href="#">Caution Floor Stand</a></li>
-								<li><a href="#">Spring Post</a></li>
-								<li><a href="#">Telescopic Barricading Bar</a></li>
-								<li><a href="#">Center Verge</a></li>
-								<li><a href="#">Road Signs</a></li>
-								<li><a href="#">Flexible Delineators</a></li>
-								<li><a href="#">Flap Delineators</a></li>
-								<li><a href="#">Safety Bollard</a></li>
-								<li><a href="#">Lane Control Signal Light / OHLS</a></li>
-								<li><a href="#">Cone Message Plate</li>
-								<li><a href="#">Enforcement System</a></li>
- 						  	</ul>
-   	 					  </li>
-   	 					  <li class="dropdown-submenu">
-   	 					  	<a role="dropdown-toggle" tabindex="-1" href="#">Vehicle-related Products</a>
-   	 					  	<ul class="dropdown-menu single">
-   	 					  		<li><a href="#">Dome mirror</a></li>
-								<li><a href="#">Convex Mirror</a></li>
-								<li><a href="#">Wheel block system</a></li>
-								<li><a href="#">Reflectors</a></li>
-								<li><a href="#">Truck wheel chocks</a></li>
-								<li><a href="#">Dominator plus traffic advisor</a></li>
-								<li><a href="#">Rubber Corner Guard</a></li>
-								<li><a href="#">Wheel Chocks</a></li>
-								<li><a href="#">Parking Stud</a></li>
-								<li><a href="#">S Type Plastic Chain</a></li>
-								<li><a href="#">Triangular Type Wheel Chock</a></li>
-								<li><a href="#">Security Checking Mirrors</a></li>
-								<li><a href="#">Dominator Plus Traffic Advisor</a></li>
-								<li><a href="#">parking dividers</a></li>
-								<li><a href="#">Fire extinguishers</a></li>
-								<li><a href="#">Flashing beacons</a></li>
-								<li><a href="#">Fog Lights</a></li>
-								<li><a href="#">Signage:max no. of passengers</a></li>
-								<li><a href="#">Blind spot Mirror</a></li>
-								<li><a href="#">Fresnel lens</a></li>
-								<li><a href="#">Rear warning signs for vehicles</a></li>
-								<li><a href="#">Side under run guards</a></li>
-								<li><a href="#">reflective warning triangle	</a></li>
-								<li><a href="#">reversing sensors/cameras/alarms</a></li>
-								<li><a href="#">ABS/Brakes</a></li>
-   	 					  	</ul>	
-   	 					  </li>
-    					  <li class="dropdown-submenu">
-    					  	<a class="dropdown-toggle" data-toggle="dropdown" tabindex="-1" href="#">Person-related Products</a>
-    					  	<ul class="dropdown-menu single">
-    					  		<li><a href="#">safety jackets</a></li>
-								<li><a href="#">Live Fall Arrester System</a></li>
-								<li><a href="#">STAINLESS STEEL QUE MANAGER	</a></li>
-								<li><a href="#">VELVET ROPE	</a></li>
-								<li><a href="#">Breath analyzer Machine</a></li>
-								<li><a href="#">Safety light bar</a></li>
-								<li><a href="#">LED Search lights</a></li>
-								<li><a href="#">Xenon HID search Light</a></li>
-								<li><a href="#">Reflective Gloves</a></li>
-								<li><a href="#">Industrial Safety Helmets</a></li>
-								<li><a href="#">Safety Cross Belts</a></li>
-								<li><a href="#">PVC / HDPE INDUSTRIAL SAFETY HELMET</a></li>
-								<li><a href="#">HELMET WITH HEAD LAMP</a></li>
-								<li><a href="#">Fireman Helmet Is 2745</a></li>
-								<li><a href="#">PVC HAND GLOVES</a></li>
-								<li><a href="#">Cold Storage Hand Gloves</a></li>
-								<li><a href="#">DUST / FUME RESPIRATOR</a></li>
-								<li><a href="#">Fume Mask</a></li>
-								<li><a href="#">Hand Held Metal Detectors</a></li>
-								<li><a href="#">Reflectors</a></li>
-								<li><a href="#">traffic light baton</a></li>
-								<li><a href="#">First-Aid box</a></li> -->
-    					  	</ul>
-    					  </li>
-   	 					</ul>
-   	 				</li>
-					<li><a href="#">Contact Us</a></li>
-				</ul>
-				<ul class="nav navbar-nav navbar-right">
-					<li><a href="#">My Account</a></li>
-					<li><a href="#">My cart</a></li>
-					<li><a href="#">Log Out</a></li>
-				</ul>
-				</div>
-			</div>
-			</nav>
+                
+                               <!-- <li ><a href="product_temp.html">Traffic Cone connecting rod</a></li>
+                                <li><a href="#">Chain</a></li>
+                                <li><a href="#">Solar Studs</a></li>
+                                <li><a href="#">Epoxy Filled Road Stud</a></li>
+                                <li><a href="#">Barricades</a></li>
+                                <li><a href="#">Solar Delineator</a></li>
+                                <li><a href="#">Lane control signals lights</a></li>
+                                <li><a href="#">Parking Dividers</a></li>
+                                <li><a href="#">Traffic Sensors</a></li>
+                                <li><a href="#">Road Blocker</a></li>
+                                <li><a href="#">Car Stopper</a></li>    
+                                <li><a href="#">Road Signs</a></li>
+                                <li><a href="#">Traffic Warning Flasher</a></li>
+                                <li><a href="#">Traffic Mirror</a></li>
+                                <li><a href="#">Antiskid Coating</a></li>
+                                <li><a href="#">LED Solar</a></li>
+                                <li><a href="#">Solar Street Light</a></li>
+                                <li><a href="#">Solar cat eye</a></li>
+                                <li><a href="#">Speed retarders</a></li>
+                                <li><a href="#">Traffic Cone</a></li>
+                                <li><a href="#">Crash barrier</a></li>  
+                                <li><a href="#">Traffic median marker</a></li>
+                                <li><a href="#">Retractable traffic cone topper</a></li>
+                                <li><a href="#">Reflective traffic cone</a></li>    
+                                <li><a href="#">Truck wheel stopper</a></li>
+                                <li><a href="#">Rumbler</a></li>
+                                <li><a href="#">Thermo Plastic Road Marking Paint</a></li>
+                                <li><a href="#">Boom Barriers</a></li>
+                                <li><a href="#">Traffic Delineator Posts</a></li>
+                                <li><a href="#">Traffic Batons</a></li>
+                                <li><a href="#">Road Lamps</a></li>
+                                <li><a href="#">Rubber Corner Guard</a></li>
+                                <li><a href="#">Traffic Cone Highly Flexible</a></li>
+                                <li><a href="#">crash Barrier</a></li>
+                                <li><a href="#">Barricading Tape</a></li>
+                                <li><a href="#">Caution Floor Stand</a></li>
+                                <li><a href="#">Spring Post</a></li>
+                                <li><a href="#">Telescopic Barricading Bar</a></li>
+                                <li><a href="#">Center Verge</a></li>
+                                <li><a href="#">Road Signs</a></li>
+                                <li><a href="#">Flexible Delineators</a></li>
+                                <li><a href="#">Flap Delineators</a></li>
+                                <li><a href="#">Safety Bollard</a></li>
+                                <li><a href="#">Lane Control Signal Light / OHLS</a></li>
+                                <li><a href="#">Cone Message Plate</li>
+                                <li><a href="#">Enforcement System</a></li>
+                            </ul>
+                          </li>
+                          <li class="dropdown-submenu">
+                            <a role="dropdown-toggle" tabindex="-1" href="#">Vehicle-related Products</a>
+                            <ul class="dropdown-menu single">
+                                <li><a href="#">Dome mirror</a></li>
+                                <li><a href="#">Convex Mirror</a></li>
+                                <li><a href="#">Wheel block system</a></li>
+                                <li><a href="#">Reflectors</a></li>
+                                <li><a href="#">Truck wheel chocks</a></li>
+                                <li><a href="#">Dominator plus traffic advisor</a></li>
+                                <li><a href="#">Rubber Corner Guard</a></li>
+                                <li><a href="#">Wheel Chocks</a></li>
+                                <li><a href="#">Parking Stud</a></li>
+                                <li><a href="#">S Type Plastic Chain</a></li>
+                                <li><a href="#">Triangular Type Wheel Chock</a></li>
+                                <li><a href="#">Security Checking Mirrors</a></li>
+                                <li><a href="#">Dominator Plus Traffic Advisor</a></li>
+                                <li><a href="#">parking dividers</a></li>
+                                <li><a href="#">Fire extinguishers</a></li>
+                                <li><a href="#">Flashing beacons</a></li>
+                                <li><a href="#">Fog Lights</a></li>
+                                <li><a href="#">Signage:max no. of passengers</a></li>
+                                <li><a href="#">Blind spot Mirror</a></li>
+                                <li><a href="#">Fresnel lens</a></li>
+                                <li><a href="#">Rear warning signs for vehicles</a></li>
+                                <li><a href="#">Side under run guards</a></li>
+                                <li><a href="#">reflective warning triangle </a></li>
+                                <li><a href="#">reversing sensors/cameras/alarms</a></li>
+                                <li><a href="#">ABS/Brakes</a></li>
+                            </ul>   
+                          </li>
+                          <li class="dropdown-submenu">
+                            <a class="dropdown-toggle" data-toggle="dropdown" tabindex="-1" href="#">Person-related Products</a>
+                            <ul class="dropdown-menu single">
+                                <li><a href="#">safety jackets</a></li>
+                                <li><a href="#">Live Fall Arrester System</a></li>
+                                <li><a href="#">STAINLESS STEEL QUE MANAGER </a></li>
+                                <li><a href="#">VELVET ROPE </a></li>
+                                <li><a href="#">Breath analyzer Machine</a></li>
+                                <li><a href="#">Safety light bar</a></li>
+                                <li><a href="#">LED Search lights</a></li>
+                                <li><a href="#">Xenon HID search Light</a></li>
+                                <li><a href="#">Reflective Gloves</a></li>
+                                <li><a href="#">Industrial Safety Helmets</a></li>
+                                <li><a href="#">Safety Cross Belts</a></li>
+                                <li><a href="#">PVC / HDPE INDUSTRIAL SAFETY HELMET</a></li>
+                                <li><a href="#">HELMET WITH HEAD LAMP</a></li>
+                                <li><a href="#">Fireman Helmet Is 2745</a></li>
+                                <li><a href="#">PVC HAND GLOVES</a></li>
+                                <li><a href="#">Cold Storage Hand Gloves</a></li>
+                                <li><a href="#">DUST / FUME RESPIRATOR</a></li>
+                                <li><a href="#">Fume Mask</a></li>
+                                <li><a href="#">Hand Held Metal Detectors</a></li>
+                                <li><a href="#">Reflectors</a></li>
+                                <li><a href="#">traffic light baton</a></li>
+                                <li><a href="#">First-Aid box</a></li> -->
+                            </ul>
+                          </li>
+                        </ul>
+                    </li>
+                    <li style = "font-size: 1.3vw;"><a href="#">Contact Us</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li style = "font-size: 1.3vw;"><a href="#">My Account</a></li>
+                    <li style = "font-size: 1.3vw;"><a href="#">My cart</a></li>
+                    <li style = "font-size: 1.3vw;"><a href="#">Log Out</a></li>
+                </ul>
+                </div>
+            </div>
+            </nav>
 
-		</div>
+        </div>
 
-	
 	<!--<div id="myCarousel" class="carousel slide">-->
     	<!-- Indicators -->
     	<!--<ol class="carousel-indicators">
@@ -244,15 +243,7 @@ if($mysqli === false){
 		<?php
        	if(isset($_REQUEST["ITEM_NAME"]))
        	 {
-       	 	$ITEM_NAME = $_REQUEST["ITEM_NAME"];
-       	 	$quer = "SELECT * FROM Sheet1 WHERE ITEM_NAME ='".$ITEM_NAME."'";
-       	 	$reply = $mysqli->query($quer);
        	 	
-       	 	$result = $reply->fetch_assoc();
-       	 	$newpageval = $result["pageview"] + 1;
-       	 	$itemname = $result["ITEM_NAME"];
-       	 	$pageupdate = "UPDATE Sheet1 SET pageview = '$newpageval' WHERE ITEM_NAME = '$itemname'";
-       	 	?>
                             	
         <div class="product">
         	<div class = "container-fluid">
