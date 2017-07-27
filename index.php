@@ -3,10 +3,11 @@
 	<head>
 		<title>SafeKart</title>
 		<meta charset="utf-8">
+		<meta name="viewport" content = "width = device-width, initial-scale = 1.0">
 		<link href="safekart.css" type="text/css" rel="stylesheet" />
 		<link rel="stylesheet" href="bootstrap.min.css">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
-  		<script src="bootstrap.min.js"></script>
+  		<script src ="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"></script>
   		<link href="https://fonts.googleapis.com/css?family=Lato|Open+Sans|Slabo+27px" rel="stylesheet">
 
 	</head>
@@ -246,17 +247,21 @@ if($mysqli === false){
        	 	$ITEM_NAME = $_REQUEST["ITEM_NAME"];
        	 	$quer = "SELECT * FROM Sheet1 WHERE ITEM_NAME ='".$ITEM_NAME."'";
        	 	$reply = $mysqli->query($quer);
+       	 	
        	 	$result = $reply->fetch_assoc();
+       	 	$newpageval = $result["pageview"] + 1;
+       	 	$itemname = $result["ITEM_NAME"];
+       	 	$pageupdate = "UPDATE Sheet1 SET pageview = '$newpageval' WHERE ITEM_NAME = '$itemname'";
        	 	?>
                             	
         <div class="product">
-		<div class="product-image">
-			<img src="<?php echo $result["IMAGE_SRC"]."/image1.png"; ?>" />
-			<p><?php echo $result["IMAGE_SRC"]."/image1.png"; ?></p>
-		</div>
-		
-		<div class="product-details">
-			<h2 class="title"><?php echo $result["ITEM_NAME"]; ?></h2>
+        	<div class = "container-fluid">
+        		<div class="row">
+					<div class="col-sx-12 col-sm-6 col-lg-4 col-md-4">
+						<img src="<?php echo $result["IMAGE_SRC"]."/image1.png"; ?>" width = "100%" />
+						<p><?php echo $result["IMAGE_SRC"]."/image1.png"; ?></p>
+					</div>
+					<h2 class="title"><?php echo $result["ITEM_NAME"]; ?></h2>
 			<div class = "SIZE">
 				<h3 >SIZE</h3>
 				<p>
@@ -342,6 +347,9 @@ if($mysqli === false){
 					<img src="<?php echo $result["IMAGE_SRC"]."/leastprice/image3.png" ; ?>"/>
 				</p>
 			</div>
+	
+		
+	
 	<?php
        } 
  	else {?>
@@ -383,6 +391,26 @@ if($mysqli === false){
 		<div class="intro-container">
 			<p class="intro">WELCOME TO THE ONE STOP SOLUTION FOR ALL ROAD SAFETY PRODUCTS</p>
 		</div>
+		<div class = "container-fluid">
+		<div class = "row">
+			<div class ="col-sm-6 col-md-4 col-lg-4">
+				<div>
+					<img src ="images/product1/image1.png" height = "100%" width = "100%">
+					<a href="<?php echo $url; ?>"><?php echo $row["ITEM_NAME"]; ?> </a>
+				</div>
+			</div>
+			<div class ="col-sx-12 col-sm-6 col-md-4 col-lg-4">
+				
+				
+			</div>
+			<div class ="col-sm-6 col-md-4 col-lg-4">
+				
+			</div>
+			
+		</div>	
+		</div>
+		
+		
 		
 		<div class="content">
 		<p>
